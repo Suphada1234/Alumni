@@ -10,11 +10,11 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>เลขบัตรประชาชน</label>
-                    <input type="email" class="form-control" id="login_email" name="login_email">
+                    <label>รหัสนักศึกษา</label>
+                    <input type="text" class="form-control" id="login_email" name="login_email">
                 </div>
                 <div class="form-group">
-                    <label>รหัสนักศึกษา</label>
+                    <label>Password</label>
                     <input type="password" class="form-control" id="login_password" name="login_password">
                 </div>
             </div>

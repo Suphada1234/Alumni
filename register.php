@@ -102,6 +102,10 @@
                         <label>Email</label>
                         <input type="text" class="form-control" name="email">
                     </div>
+                    <div class="form-group col-md-6">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
                 </div>
                 <br>
                 <h3><span class="badge" style="background-color:#e7ab3c;color:#fff;">ข้อมูลการศึกษา</span></h3>
