@@ -24,7 +24,7 @@
       $p_tel = $_POST["p_tel"];
       $email = $_POST["email"];
       $facebook = $_POST["facebook"];
-      $password = $_POST["password"]
+      $password = $_POST["password"];
 
       $imgName = $_FILES["img"]["name"];
       $temName = $_FILES["img"]["tmp_name"];
