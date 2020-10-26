@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2020 at 09:13 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Oct 20, 2020 at 10:56 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ae`
+-- Database: `alumni`
 --
 
 -- --------------------------------------------------------
@@ -45,8 +44,10 @@ CREATE TABLE `alumni` (
 --
 
 INSERT INTO `alumni` (`student_id`, `group`, `branch`, `faculty`, `semester`, `education_level`, `year_int`, `year_out`, `outstanding_work`) VALUES
-(12, '13', '13', '13', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2563', '2553', '13'),
-(121, '2', '', '', '', '', '-', '-', '');
+(614259014, '61/47', 'วิศวกรรมซอฟแวร์', 'วิทยาศาสตร์และเทคโนโลยี', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2561', '2563', '-'),
+(614259029, '61/47', 'วิศวกรรมซอฟแวร์', 'วิทยาศาสตร์และเทคโนโลยี', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2561', '2563', '-'),
+(614259054, '61/47', 'วิศวกรรมซอฟแวร์', 'วิทยาศาสตร์และเทคโนโลยี', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2561', '2563', '---'),
+(614259056, '64/47', 'software enginerring', 'sicent', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2563', '2563', '');
 
 -- --------------------------------------------------------
 
@@ -72,8 +73,10 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`card_id`, `student_id`, `name`, `gender`, `birthday`, `address`, `tel`, `email`, `facebook`, `img`) VALUES
-('12', 12, '13', 'ชาย', '2013-03-13', '13', '13', '13', '13', 'Untitled.png'),
-('121', 121, '121', 'หญิง', '2020-03-11', '121', '121', '121', '121', 'noImage');
+('1234567890123', 614259014, 'นาย ณัฐชัย สุบรรณเกตุ', 'ชาย', '0000-00-00', '85 - ดำเนินสะดวก เมือง ราชบุรี 82000', '095-456321', 'Nuttachai_Subangate@gmail.com', 'Nuttachai S. Subangate', '1024px-Steve_Jobs_Headshot_2010-CROP.jpg'),
+('1579900782724', 614259054, 'นางสาว ศุภาดา ทองไทย', 'หญิง', '2541-05-22', '85 - ตะกุดไร ชนแดน เพชรบูรณ์ 67190', '0638025540', 'suphada22.ae@gmail.com', 'ิBlueWhale', 'alone.jpg'),
+('1730501138456', 614259056, 'นางสาวSirinratpanpradidt', 'หญิง', '2020-10-20', '128-บางงปลาบางเลนนครปฐม73130', NULL, '614259029@webmail.npru.ac.th', 'kalumni', NULL),
+('1730501138678', 614259029, 'นางสาว สิรินทร์รัตน์ ปานประดิษฐ์', 'หญิง', '2542-08-03', '129  - บางปลา บางเลน Nakhon Pathom 73000', '095-836838', '614259029@webmail.npru.ac.th', 'Sirinrat Hna Panpradidt ', 'basic form.PNG');
 
 -- --------------------------------------------------------
 
@@ -87,6 +90,7 @@ CREATE TABLE `workinformation` (
   `company` varchar(255) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
+  `province` varchar(20) NOT NULL,
   `tel` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -94,9 +98,11 @@ CREATE TABLE `workinformation` (
 -- Dumping data for table `workinformation`
 --
 
-INSERT INTO `workinformation` (`work_id`, `student_id`, `company`, `position`, `address`, `tel`) VALUES
-(6, 12, '13', '13', '13', '13'),
-(7, 121, '', '', '     ', '');
+INSERT INTO `workinformation` (`work_id`, `student_id`, `company`, `position`, `address`, `province`, `tel`) VALUES
+(8, 614259054, 'Nakhon Pathom Rajabhat University', 'โปรแกรมเมอร์', '99 85  ม.7 หนองปากโรง เมือง Nakhon Pathom 73000', '', '02-12333333'),
+(9, 614259014, 'Nakhon Pathom Rajabhat University', 'โปรแกรมเมอร์', '99 85 Malai Man Road, Mueang District, Nakhon Pathom Province 73000 หนองปากโรง เมือง Nakhon Pathom 73000', '', '02-12333333'),
+(10, 614259029, 'Nakhon Pathom Rajabhat University', 'โปรแกรมเมอร์', '99 85 Malai Man Road, Mueang District, Nakhon Pathom Province 73000 หนองปากโรง เมือง Nakhon Pathom 73000', '', '02-12333333'),
+(11, 614259056, 'rajabhat nakhon pathom university', 'ceo', '128dsfบางปลาบางเลน73130', 'นครปฐม', '0800253481');
 
 --
 -- Indexes for dumped tables
@@ -130,7 +136,7 @@ ALTER TABLE `workinformation`
 -- AUTO_INCREMENT for table `workinformation`
 --
 ALTER TABLE `workinformation`
-  MODIFY `work_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `work_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
