@@ -101,6 +101,10 @@
                         <label for="">Email</label>
                         <input type="text" class="form-control" value="<?php echo $rowPersonal['email']; ?>" name="email">
                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Password</label>
+                        <input type="password" class="form-control" value="<?php echo $rowPersonal['password']; ?>" name="password">
+                    </div>
                 </div>
                 <?php }; ?>
                 <!--  -->

@@ -12,6 +12,8 @@
       $p_tel = $_POST["p_tel"];
       $email = $_POST["email"];
       $facebook = $_POST["facebook"];
+      $password = $_POST["password"];
+
 
       $imgName = $_FILES["img"]["name"];
       $temName = $_FILES["img"]["tmp_name"];
@@ -19,7 +21,7 @@
       if($imgName ==  ""){
             try{   
                   // ไม่มีการอัปเดตรูป
-                    $insert = $conn->prepare("UPDATE `personal` SET `name`=:p_name,`gender`=:gender,`birthday`=:birthday,`address`=:p_address,`tel`=:p_tel,`email`=:email,`facebook`=:facebook WHERE `card_id` = :p_card");
+                    $insert = $conn->prepare("UPDATE `personal` SET `name`=:p_name,`gender`=:gender,`birthday`=:birthday,`address`=:p_address,`tel`=:p_tel,`email`=:email,`facebook`=:facebook,`password`=:password WHERE `card_id` = :p_card");
                     $insert->bindparam(":p_card",$p_card);
                     $insert->bindparam(":p_name",$name);
                     $insert->bindparam(":gender",$gender);
