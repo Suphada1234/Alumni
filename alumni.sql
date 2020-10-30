@@ -42,13 +42,7 @@ CREATE TABLE `alumni` (
 -- Dumping data for table `alumni`
 --
 
-INSERT INTO `alumni` (`student_id`, `group`, `branch`, `faculty`, `semester`, `education_level`, `year_int`, `year_out`, `outstanding_work`) VALUES
-(614259014, '61/47', 'วิศวกรรมซอฟแวร์', 'วิทยาศาสตร์และเทคโนโลยี', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2561', '2563', '-'),
-(614259018, '', '', '', '', '', '-', '-', ''),
-(614259019, '', '', '', '', '', '-', '-', ''),
-(614259029, '61/47', 'วิศวกรรมซอฟแวร์', 'วิทยาศาสตร์และเทคโนโลยี', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2561', '2563', '-'),
-(614259054, '61/47', 'วิศวกรรมซอฟแวร์', 'วิทยาศาสตร์และเทคโนโลยี', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2561', '2563', '---'),
-(614259056, '64/47', 'software enginerring', 'sicent', 'ภาคเรียนปกติ', 'ปริญญาตรี', '2563', '2563', '');
+
 
 -- --------------------------------------------------------
 
@@ -64,7 +58,6 @@ CREATE TABLE `personal` (
   `gender` enum('ชาย','หญิง') DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `province` varchar(20) NOT NULL,
   `tel` varchar(10) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
@@ -75,13 +68,7 @@ CREATE TABLE `personal` (
 -- Dumping data for table `personal`
 --
 
-INSERT INTO `personal` (`card_id`, `student_id`, `password`, `name`, `gender`, `birthday`, `address`, `province`, `tel`, `email`, `facebook`, `img`) VALUES
-('1234567890123', 614259014, '', 'นาย ณัฐชัย สุบรรณเกตุ', 'ชาย', '0000-00-00', '85 - ดำเนินสะดวก เมือง ราชบุรี 82000', '', '095-456321', 'Nuttachai_Subangate@gmail.com', 'Nuttachai S. Subangate', '1024px-Steve_Jobs_Headshot_2010-CROP.jpg'),
-('1579900782724', 614259054, '', 'นางสาว ศุภาดา ทองไทย', 'หญิง', '2541-05-22', '85 - ตะกุดไร ชนแดน เพชรบูรณ์ 67190', '', '0638025540', 'suphada22.ae@gmail.com', 'ิBlueWhale', 'alone.jpg'),
-('1730501138456', 614259056, '', 'นางสาวSirinratpanpradidt', 'หญิง', '2020-10-20', '128-บางงปลาบางเลนนครปฐม73130', '', NULL, '614259029@webmail.npru.ac.th', 'kalumni', NULL),
-('1730501138457', 614259018, '', '-  ', '', '0000-00-00', '     ', '', NULL, '', '', NULL),
-('1730501138458', 614259019, '', 'นางสาว กะหล่ำ ปลี', '', '0000-00-00', '     ', '', NULL, '', '', NULL),
-('1730501138678', 614259029, '', 'นางสาว สิรินทร์รัตน์ ปานประดิษฐ์', 'หญิง', '2542-08-03', '129  - บางปลา บางเลน Nakhon Pathom 73000', '', '095-836838', '614259029@webmail.npru.ac.th', 'Sirinrat Hna Panpradidt ', 'basic form.PNG');
+
 
 -- --------------------------------------------------------
 
@@ -95,7 +82,6 @@ CREATE TABLE `workinformation` (
   `company` varchar(255) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `province` varchar(20) NOT NULL,
   `tel` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -103,13 +89,8 @@ CREATE TABLE `workinformation` (
 -- Dumping data for table `workinformation`
 --
 
-INSERT INTO `workinformation` (`work_id`, `student_id`, `company`, `position`, `address`, `province`, `tel`) VALUES
-(8, 614259054, 'Nakhon Pathom Rajabhat University', 'โปรแกรมเมอร์', '99 85  ม.7 หนองปากโรง เมือง Nakhon Pathom 73000', '', '02-12333333'),
-(9, 614259014, 'Nakhon Pathom Rajabhat University', 'โปรแกรมเมอร์', '99 85 Malai Man Road, Mueang District, Nakhon Pathom Province 73000 หนองปากโรง เมือง Nakhon Pathom 73000', '', '02-12333333'),
-(10, 614259029, 'Nakhon Pathom Rajabhat University', 'โปรแกรมเมอร์', '99 85 Malai Man Road, Mueang District, Nakhon Pathom Province 73000 หนองปากโรง เมือง Nakhon Pathom 73000', '', '02-12333333'),
-(11, 614259056, 'rajabhat nakhon pathom university', 'ceo', '128dsfบางปลาบางเลน73130', 'นครปฐม', '0800253481'),
-(12, 614259018, '', '', '    ', '', ''),
-(13, 614259019, '', '', '    ', '', '');
+
+
 
 --
 -- Indexes for dumped tables

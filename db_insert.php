@@ -38,10 +38,11 @@
               }
              else { $img = 'noImage';}  //ถ้าไม่มีรูปภาพจะให้ใส่คำว่า 'noImage'
 
-            $insert = $conn->prepare("INSERT INTO `personal`(`card_id`, `student_id`, `name`, `gender`, `birthday`, `address`, `tel`, `email`, `facebook`, `img`) VALUES 
-            (:p_card,:studentCode,:p_name,:gender,:birthday,:p_address,:p_tel,:email,:facebook,:img)");
+            $insert = $conn->prepare("INSERT INTO `personal`(`card_id`, `student_id`,`password`, `name`, `gender`, `birthday`, `address`, `tel`, `email`, `facebook`, `img`) VALUES 
+            (:p_card,:studentCode,:password,:p_name,:gender,:birthday,:p_address,:p_tel,:email,:facebook,:img)");
             $insert->bindparam(":p_card",$p_card);
             $insert->bindparam(":studentCode",$studentCode);
+            $insert->bindparam(":password",$password);
             $insert->bindparam(":p_name",$name);
             $insert->bindparam(":gender",$gender);
             $insert->bindparam(":birthday",$birthday);
